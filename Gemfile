@@ -14,6 +14,7 @@ gem "letter_opener", :group => :development
 
 gem 'table_print'
 gem 'faker'
+gem 'devise'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
