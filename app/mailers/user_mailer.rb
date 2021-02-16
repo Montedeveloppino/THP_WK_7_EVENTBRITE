@@ -14,12 +14,12 @@ class UserMailer < ApplicationMailer
 
   def attendance_confirmation(user)
       #on récupère l'instance user pour ensuite pouvoir la passer à la view en @user
-      @user = user 
+      @user = user
   
       #on définit une variable @url qu'on utilisera dans la view d’e-mail
       @url  = 'http://eventbrite23.herokuapp/login' 
   
       # c'est cet appel à mail() qui permet d'envoyer l’e-mail en définissant destinataire et sujet.
-      mail(to: @user.email, subject: 'Inscirption confirmée !')
+      mail(to: user.email, subject: 'Inscirption confirmée !')
   end
 end
