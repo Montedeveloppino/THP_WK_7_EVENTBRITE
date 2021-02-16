@@ -1,0 +1,42 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 offset-md-3">
+    <br><br><br>
+
+
+<%= form_with scope: :event, url: events_path, local: true do |form| %>
+  
+  <p>
+    <%= form.label :title %><br>
+    <%= form.text_field :title %>
+  </p>
+ 
+  <p>
+    <%= form.label :description %><br>
+    <%= form.text_area :description %>
+  </p>
+   <p>
+    <%= form.label :price %><br>
+    <%= form.text_area :price %>
+  </p>
+
+   <p>
+    <%= form.label :duration %><br>
+    <%= form.text_area :duration %>
+  </p>
+
+   <p>
+    <%= form.label :location %><br>
+    <%= form.text_area :location %>
+  </p>
+  <p>
+    <%= form.label :start_date %><br>
+    <%= form.text_area :start_date   %>
+  </p>
+  <p>
+    <%= form.submit %>
+  </p>
+ 
+<% end %>
+
+<%= link_to 'Back', static_pages_index_path %>

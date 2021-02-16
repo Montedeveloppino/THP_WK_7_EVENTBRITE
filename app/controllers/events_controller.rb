@@ -8,7 +8,7 @@ class EventsController < ApplicationController
   end
 
   def create
-    @event = Event.new(params[:event])
+    @event = Event.new(event_params)
     @event.save
   redirect_to events_path
   end
@@ -27,7 +27,7 @@ class EventsController < ApplicationController
   end
 
   private
-    def comment_params
+    def event_params
       params.require(:event).permit(:start_date, :duration, :title, :description, :price, :location)
     end
 end

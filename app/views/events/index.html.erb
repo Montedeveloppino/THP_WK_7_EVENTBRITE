@@ -1,18 +1,27 @@
-<table>
-  <tr>
-    <th>Evenements</th>
-    <th></th>
-    <th></th>
-  </tr>
- 
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">Id</th>
+      <th scope="col">Title</th>
+      <th scope="col">Duration</th>
+      <th scope="col">Location</th>
+      <th scope="col">Start_date</th>
+      <th scope="col">Price</th>
+      <th scope="col">View</th>
+      
+    </tr>
+  </thead>
+  <tbody>
   <% @event.each do |event| %>
     <tr>
-      <td><%= event.start_date %></td>
-      <td><%= event.duration %></td>
+      <th scope="row"><%= event.id%></th>
       <td><%= event.title %></td>
-      <td><%= event.price %>€</td>
+      <td><%= event.duration %></td>
       <td><%= event.location %></td>
+      <td><%= event.start_date %></td>
+      <td><%= event.price %>€</td>
       <td><%= link_to 'Show', event_path(event) %></td>
     </tr>
   <% end %>
-</table>  
+  </tbody>
+</table>
