@@ -12,9 +12,12 @@
                   <button type="button" class="btn btn-sm btn-outline-secondary">
                   <%=link_to"Inscris toi pour pouvoir participer !", new_attendance_path%></button>
                   <%else%>
-                  <button type="button" class="btn btn-sm btn-outline-secondary">like</button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary">Attendees</button>
                   <button type="button" class="btn btn-sm btn-outline-secondary">
                   <%=link_to"Edit", edit_event_path%></button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary">
+                  <%= link_to "delete", {:controller => :events,
+                    :action => 'destroy', :id => @event.id }, :method => :delete %></button>
                   <%end%>
                   
 
