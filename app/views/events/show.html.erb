@@ -8,8 +8,16 @@
               </p>
               <div class="d-flex justify-content-between align-items-center">
                 <div class="btn-group">
-                  <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                  <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                  <% if user_signed_in? == false%>
+                  <button type="button" class="btn btn-sm btn-outline-secondary">
+                  <%=link_to"Inscris toi pour pouvoir participer !", new_attendance_path%></button>
+                  <%else%>
+                  <button type="button" class="btn btn-sm btn-outline-secondary">like</button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary">
+                  <%=link_to"Edit", edit_event_path%></button>
+                  <%end%>
+                  
+
                 </div>
                 <small class="text-muted">© Eventbrite</small>
               </div>
