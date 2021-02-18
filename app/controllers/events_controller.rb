@@ -15,7 +15,7 @@ class EventsController < ApplicationController
       redirect_to root_path, success: "you must be registered and login to create an event!"
     end
 
-    @event = current_user.events.new(event_params)
+    #@event = current_user.events.new(event_params)
 
     @event.save
   redirect_to events_path
