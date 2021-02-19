@@ -2,6 +2,7 @@ class Event < ApplicationRecord
   belongs_to :user
   has_many :attendances
   has_many :users, through: :attendances
+  
 =begin 
   validates :duration, presence: true, format: { with: /\A\d+(?:\.\d{2})?\z/ }, numericality: { greater_than: 0}
   validates :title, length: {minimum: 5, maximum: 140}
