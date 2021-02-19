@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  #root 'orders#new'
+  root 'orders#new'
   resources :orders, only: [:new, :create]
   root "events#index"
   get 'static_pages/index'
