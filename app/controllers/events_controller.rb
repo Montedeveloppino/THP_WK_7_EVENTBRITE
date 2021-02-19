@@ -31,7 +31,7 @@ class EventsController < ApplicationController
 
   def update
     @event = Event.find(params[:id])
-    if user_signed_in? == false && current_user != @event.user_id
+    if user_signed_in? == false || (current_user.id < @event.user_id || current_user.id > @event.user_id)
       redirect_to root_path, success: "you must be registered and login to create an event!" 
     else 
       @event.update(event_params)
@@ -47,7 +47,7 @@ class EventsController < ApplicationController
 
   private
     def event_params
-      params.require(:event).permit(:start_date, :duration, :title, :description, :price, :location)
+      params.require(:event).permit(:start_date, :duration, :title, :description, :price, :location).merge(user_id: current_user.id)
     end
     def set_event
       @event = Event.find(params[:id])
