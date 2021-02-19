@@ -31,7 +31,7 @@ class EventsController < ApplicationController
 
   def update
     @event = Event.find(params[:id])
-    if user_signed_in? == false
+    if user_signed_in? == false && current_user != @event.user_id
       redirect_to root_path, success: "you must be registered and login to create an event!" 
     else 
       @event.update(event_params)
