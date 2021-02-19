@@ -11,6 +11,7 @@
                   <% if user_signed_in? == false || (current_user.id < @event.user_id || current_user.id > @event.user_id) %>
                   <button type="button" class="btn btn-sm btn-outline-secondary">
                   <%=link_to"Inscris toi pour pouvoir participer !", new_attendance_path%></button>
+                  <button type="button" class="btn"><%=link_to"Buy Now for #{@event.price.to_i}€", new_order_path%></button>
                   <%else%>
                   <button type="button" class="btn btn-sm btn-outline-secondary">Attendees</button>
                   <button type="button" class="btn btn-sm btn-outline-secondary">
@@ -18,8 +19,9 @@
                   <button type="button" class="btn btn-sm btn-outline-secondary">
                   <%= link_to "delete", {:controller => :events,
                     :action => 'destroy', :id => @event.id }, :method => :delete %></button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary">
+                  <%=link_to"Attendences", attendances_path%></button>
                   <%end%>
-                  
 
                 </div>
                 <small class="text-muted">Created by <%= @event.user.email%></small>

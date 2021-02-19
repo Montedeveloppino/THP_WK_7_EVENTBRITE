@@ -1,17 +1,17 @@
 class OrdersController < ApplicationController
   def new
-      @stripe_amount = (@amount * 100).to_i
+      @stripe_amount = (@amount.to_i * 100)
       @user = User.first
       @event = Event.first
-      @amount = @pevent.price
+      @amount = @event.price
   end
 
   def create
         # Before the rescue, at the beginning of the method
-      @stripe_amount = (@amount * 100).to_i
+      @amount = @event.price
+      @stripe_amount = (@amount.to_i * 100)
       @user = User.first
       @event = Event.first
-      @amount = @event.price
 
     begin
       customer = Stripe::Customer.create({
