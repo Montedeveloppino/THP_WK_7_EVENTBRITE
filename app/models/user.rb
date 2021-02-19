@@ -8,7 +8,10 @@ class User < ApplicationRecord
   def welcome_send
     UserMailer.welcome_email(self).deliver_now
   end
-  
+
+  def password_reset_send
+    UserMailer.reset_password_instructions(self).deliver_now
+  end 
   has_many :events, through: :attendances
   has_many :attendances
 
