@@ -7,6 +7,7 @@ class CreateUsers < ActiveRecord::Migration[5.2]
       t.string :fisrt_name
       t.string :last_name
 
+      t.references :events, index: true
       t.timestamps
     end
   end

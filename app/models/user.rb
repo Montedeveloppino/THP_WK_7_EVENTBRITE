@@ -12,7 +12,9 @@ class User < ApplicationRecord
   def password_reset_send
     UserMailer.reset_password_instructions(self).deliver_now
   end 
+  
   has_many :events, through: :attendances
   has_many :attendances
-
+  
+  has_one_attached :avatar
 end
