@@ -1,7 +1,8 @@
 <h1>Votre paiement est confirmé.</h1>
 
-<h2>Merci <%= @user.fisrt_name %> pour votre achat de <strong><%= 
+<h2>Merci <%= @user.email %> pour votre achat de <strong><%= 
 @amount %> €</strong> !</h2>
 
 <p>Un email vous a été envoyé à <%= @user.email %> avec le 
 récapitulatif de votre commande.</p>
+<%= link_to "Revenir à la page d'accueil", events_path%>

@@ -1,6 +1,6 @@
 class OrdersController < ApplicationController
   def new
-    @user = User.first
+    @user = current_user
     @event = Event.first
     @amount = @event.price
     @stripe_amount = (@amount * 100).to_i
@@ -8,7 +8,7 @@ class OrdersController < ApplicationController
 
   def create
     # Before the rescue, at the beginning of the method
-    @user = User.first
+    @user = current_user
     @event = Event.first
     @amount = @event.price
     @stripe_amount = (@amount * 100).to_i

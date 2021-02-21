@@ -1,4 +1,4 @@
-<h1>Bienvenue sur ma page de paiement, <%= @user.fisrt_name %> !</h1>
+<h1>Bienvenue sur ma page de paiement, <%= @user.email %> !</h1>
 <p>Vous avez choisi le produit <%= @event.title %>.</p><%= form_tag orders_path do %>
   <article>
     <% if flash[:error].present? %>
