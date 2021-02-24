@@ -19,37 +19,9 @@
   </head>
 
   <body>
-  <nav class="navbar navbar-dark bg-dark">
-  <a class="navbar-brand" href="/events">Eventbrite</a>
-  <div class="dropdown dropleft">
-  <button class="btn navbar-toggler-icon" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></i></button>
-  
-  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-  
-   <% if user_signed_in? %>
-            <li  class="nav-item active nav-link">
-              <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
-            </li>
 
-            <li  class="nav-item active nav-link">
-              <%= link_to "My profil", static_pages_secret_path %>
-            </li>
-
-            <li  class="nav-item active nav-link">
-              <%= link_to "Create event", new_event_path%>
-            </li>
-          <% else %>
-            <li class="dropdown-item">    
-              <%= link_to "Sign in", new_user_session_path %>
-            </li>
-            <li class="dropdown-item"> 
-              <%= link_to "Sign up", new_user_registration_path %>
-            </li>
-          
-          <% end %> 
-      </div>
-    
-</nav>
+    <%= render "layouts/navbar"%>
+    <%= render "layouts/footer"%>
     <%= yield %>
   </body>
 </html>
