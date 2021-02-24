@@ -10179,28 +10179,20 @@ th {
   color: inherit;
 }
 
-/*============= Baloo Footer ===================*/
+/*============= Footer ===================*/
 
-.baloo_ft {
-  text-align: center;
+html {
+  position: relative;
+  min-height: 100%;
+  padding-bottom:100px;
+}
+body {
+  margin-bottom: 150px;
+}
+footer {
   background-color: #000;
-  font-size: 17px;
-  position: fixed;
-  bottom: 0px;
-    left: 0px;
-    right: 0px;
-    margin-bottom: 0px;
-}
-
-.baloo_cwp {
-  background-color: var(--gray-dark);
-}
-
-.baloo_lnk {
-  color: white;
-}
-
-.baloo_lnk:hover {
-  text-decoration: none;
-  color: peachpuff;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 150px;
 }

@@ -5,27 +5,50 @@
                     <a class="nav-link" href="#">Parcourir les évenements</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Créer un évenement</a>
-                </li>
-                <li class="nav-item">
                     <a class="nav-link" href="#">Aide</a>
                 </li>
             </ul>
         </div>
         <div class="mx-auto order-0">
-            <a class="navbar-brand mx-auto" href="#">Eventbrite</a>
+            <a class="navbar-brand mx-auto" href="/">Eventbrite</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".dual-collapse2">
               <span class="navbar-toggler-icon"></span>
           </button>
         </div>
         <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
+            
+            <% if user_signed_in? %>
             <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Sign up</a>
+                <li  class="nav-item">
+                    <%= link_to "Sign out", destroy_user_session_path, method: :delete, class: "nav-link" %>
+                    
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Log in</a>
+
+                <li  class="nav-item">                    
+                    <%= link_to "My profil", static_pages_secret_path, class: "nav-link" %>
+                </li>
+
+                <li  class="nav-item" > 
+                    <%= link_to "Create event", new_event_path, class: "nav-link" %>
                 </li>
             </ul>
+            <% else %>
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <%= link_to "Sign up", new_user_registration_path, class: "nav-link" %>
+                </li>
+                <li class="nav-item">                    
+                    <%= link_to "Log in", user_session_path, class: "nav-link" %>
+                </li>
+            </ul>
+            <% end %> 
         </div>
     </nav>
+
+                   
+            
+
+            
+            
+          
+            
