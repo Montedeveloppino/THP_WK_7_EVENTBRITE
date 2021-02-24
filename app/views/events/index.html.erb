@@ -1,26 +1,37 @@
-<table class="table table-striped">
-  <thead>
-    <tr>
-      <th scope="col">Id</th>
-      <th scope="col">Title</th>
-      <th scope="col">Duration</th>
-      <th scope="col">Location</th>
-      <th scope="col">Start_date</th>
-      <th scope="col">Price</th>
-      <th scope="col">View</th>      
-    </tr>
-  </thead>
-  <tbody>
-  <% @event.each do |event| %>
-    <tr>
-      <th scope="row"><%= event.id%></th>
-      <td><%= event.title %></td>
-      <td><%= event.duration %></td>
-      <td><%= event.location %></td>
-      <td><%= event.start_date %></td>
-      <td><%= event.price %>€</td>
-      <td><%= link_to 'Show', event_path(event) %></td>
-    </tr>
-  <% end %>
-  </tbody>
-</table>
+
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="eventbrite.css" rel="stylesheet">
+        <link href="bootstrap.min.css" rel="stylesheet">
+
+        
+    </head>
+    <body>
+
+      <h1 style="text-align: center; margin-top: 20px;">Events</h1>
+       <div class="row justify-content-center" style="margin: 30px;">
+       <% @event.each do |event| %>
+        
+            
+              <div class="card text-white bg-primary col-3" style="margin: 20px;">
+                <div class="card-header"><%= event.title %></div>
+                <div class="card-body">
+                  <h4 class="card-title"><%= event.title %></h4>
+                  <p class="card-text"><%= event.description %></p>
+                  <p class="card-text"><small class="text-muted"> Start in <%= event.start_date %></small></p>
+                </div>
+              </div>
+          
+
+      <% end %>
+      </div>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    </body>
+</html>

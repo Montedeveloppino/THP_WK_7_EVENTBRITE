@@ -65,12 +65,14 @@ ActiveRecord::Schema.define(version: 2021_02_19_151615) do
     t.text "description"
     t.string "fisrt_name"
     t.string "last_name"
+    t.bigint "events_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
     t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["events_id"], name: "index_users_on_events_id"
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 

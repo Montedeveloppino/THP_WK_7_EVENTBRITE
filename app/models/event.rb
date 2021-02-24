@@ -3,7 +3,7 @@ class Event < ApplicationRecord
   has_many :attendances
   has_many :users, through: :attendances
   
-=begin 
+begin 
   validates :duration, presence: true, format: { with: /\A\d+(?:\.\d{2})?\z/ }, numericality: { greater_than: 0}
   validates :title, length: {minimum: 5, maximum: 140}
   validates :description, length: {minimum: 20, maximum: 1000}
@@ -16,5 +16,5 @@ class Event < ApplicationRecord
       errors.add(:start_date, 'not in past')
     end
   end
-=end
+end
 end

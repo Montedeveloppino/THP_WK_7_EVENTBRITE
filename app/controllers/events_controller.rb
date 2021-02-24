@@ -10,13 +10,17 @@ class EventsController < ApplicationController
   end
 
   def create
-    @event = Event.new(event_params)
+  @event = Event.new(event_params)
     if user_signed_in? == false
-      redirect_to root_path, success: "you must be registered and login to create an event!"
+      redirect_to root_path, warning: "you must be registered and login to create an event!"
     end
-    #@event = current_user.events.new(event_params)
-    @event.save
-  redirect_to events_path
+    
+    if @event.save == true
+      redirect_to root_path, notice: "The event has been created"
+    else
+      redirect_to new_event_path, alert: "All fields are mandatory"
+    end
+    
   end
 
   def edit

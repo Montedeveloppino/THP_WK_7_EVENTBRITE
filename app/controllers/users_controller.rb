@@ -2,9 +2,8 @@ class UsersController < ApplicationController
 
 
     def edit
-        @user = User.find(current_user.id)
-        
-        
+        @user = User.find(current_user.id)   
+
     end
 
     def show 
